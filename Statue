@@ -1,0 +1,65 @@
+package Workshop4;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author mac
+ */
+public class Statue extends Item{
+    private int weight;
+    private String colour;
+    public Statue(){
+        
+    }
+
+    public Statue(int weight, String colour) {
+        this.weight = weight;
+        this.colour = colour;
+    }
+
+    public Statue(int weight, String colour, int value, String creator) {
+        super(value, creator);
+        this.weight = weight;
+        this.colour = colour;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+
+    public String getColour() {
+        return colour;
+    }
+
+    public void setColour(String colour) {
+        this.colour = colour;
+    }
+
+    public Scanner getSc() {
+        return sc;
+    }
+
+    public void setSc(Scanner sc) {
+        this.sc = sc;
+    }
+    @Override
+    public void input(){
+        super.input();
+        System.out.println("Enter weight: ");
+        weight = sc.nextInt();
+        sc.nextLine();
+        System.out.println("Enter colour: ");
+        colour = sc.nextLine();
+    }
+    @Override
+    public void output(){
+        super.output();
+        System.out.println("Weight" + weight);
+        System.out.println("Colour" + colour);
+    }
+}
