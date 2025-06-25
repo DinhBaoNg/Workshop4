@@ -1,0 +1,66 @@
+package Workshop4;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author mac
+ */
+public class Vase extends Item{
+    Scanner sc = new Scanner(System.in);
+    private int height;
+    private String material;
+
+    public Vase(int height, String material) {
+        this.height = height;
+        this.material = material;
+    }
+
+    public Vase(int height, String material, int value, String creator) {
+        super(value, creator);
+        this.height = height;
+        this.material = material;
+    }
+    public Vase(){
+        
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
+
+    public String getMaterial() {
+        return material;
+    }
+
+    public void setMaterial(String material) {
+        this.material = material;
+    }
+
+    public Scanner getSc() {
+        return sc;
+    }
+
+    public void setSc(Scanner sc) {
+        this.sc = sc;
+    }
+    @Override
+    public void input(){
+        super.input();
+        System.out.println("Enter the height");
+        height = sc.nextInt();
+        sc.nextLine();
+        System.out.println("Enter the materail: ");
+        material = sc.nextLine();
+    }
+    @Override
+    public void output(){
+        super.output();
+        System.out.println("Height " + height);
+        System.out.println("Material" + material);
+    }
+}
