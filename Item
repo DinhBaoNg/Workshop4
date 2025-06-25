@@ -1,0 +1,53 @@
+package Workshop4;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author mac
+ */
+public  abstract class Item {
+    Scanner sc = new Scanner(System.in);
+    private int value;
+    private String creator;
+
+    public Item(){
+        
+    }
+    
+    public Item(int value, String creator) {
+        this.value = value;
+        this.creator = creator;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public String getCreator() {
+        return creator;
+    }
+
+    public void setCreator(String creator) {
+        this.creator = creator;
+    }
+    public void input(){
+        do {
+            System.out.print("Enter value (>0): ");
+            value = sc.nextInt();
+        } while (value <= 0);
+        sc.nextLine(); 
+        do {
+            System.out.print("Enter creator: ");
+            creator = sc.nextLine();
+        } while (creator.trim().isEmpty());
+    }
+    public void output(){
+        System.out.println("The value is " + value);
+        System.out.println("The creator is " + creator);
+    }
+}
