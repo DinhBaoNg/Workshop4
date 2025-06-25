@@ -1,0 +1,22 @@
+//- What is stored in the static heap, stack, dynamic heap?
+    //+Static heap chứa thông tin về class definitions, method bytecode, 
+    //static fields và các constant values của các lớp như Item, Vase, Statue, 
+    //Painting, và AntiqueShop.
+    //+Stack chứa các biến cục bộ,chẳng hạn như
+    //biến choice, item, và sc trong hàm main().
+    //+Dynamic heap chứa các đối tượng được tạo ra bằng từ khóa new như new Vase()
+    // new Statue(), new Painting()
+//- What are objects in the program?
+    //Vase, Statue, Painting.
+//- What is the item variable storing?
+    //item là một biến kiểu Item nhưng có thể tham chiếu đến bất kỳ đối
+    //tượng nào kế thừa từ Item như Vase, Statue, hoặc Painting.
+    //Đây là cơ chế của polymorphism:sử dụng một biến của lớp cha để giữ các đối tượng con.
+//- Why must you cast to call the method inputVase()/outputVase()?
+    //Vì inputVase() và outputVase() không được định nghĩa trong lớp cha Item, nên bạn không thể gọi trực tiếp thông qua 
+    //biến item trừ khi ép kiểu (cast) nó về đúng kiểu con (Vase, Statue, hoặc Painting).
+    //Cần ép kiểu vì item chỉ biết các method của Item, còn các method đặc biệt của lớp con không nằm trong phạm vi thấy được trừ khi cast.
+//- What is the error thrown when you cast it wrong?
+//    Sẽ gây ra ClassCastException tại runtime
+//- What methods can you call if you don’t cast the item variable?
+    //Bạn chỉ có thể gọi những phương thức được khai báo trong lớp cha Item
