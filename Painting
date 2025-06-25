@@ -1,0 +1,89 @@
+package Workshop4;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author mac
+ */
+public class Painting extends Item{
+    private int height;
+    private int width;
+    private boolean isWaterColour;
+    private boolean isFramed;
+    public Painting(){
+        
+    }
+
+    public Painting(int height, int width, boolean isWaterColour, boolean isFramed) {
+        this.height = height;
+        this.width = width;
+        this.isWaterColour = isWaterColour;
+        this.isFramed = isFramed;
+    }
+
+    public Painting(int height, int width, boolean isWaterColour, boolean isFramed, int value, String creator) {
+        super(value, creator);
+        this.height = height;
+        this.width = width;
+        this.isWaterColour = isWaterColour;
+        this.isFramed = isFramed;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public void setWidth(int width) {
+        this.width = width;
+    }
+
+    public boolean isIsWaterColour() {
+        return isWaterColour;
+    }
+
+    public void setIsWaterColour(boolean isWaterColour) {
+        this.isWaterColour = isWaterColour;
+    }
+
+    public boolean isIsFramed() {
+        return isFramed;
+    }
+
+    public void setIsFramed(boolean isFramed) {
+        this.isFramed = isFramed;
+    }
+
+    public Scanner getSc() {
+        return sc;
+    }
+
+    public void setSc(Scanner sc) {
+        this.sc = sc;
+    }
+    @Override
+    public void input(){
+        super.input();
+        System.out.println("Enter height: ");
+        height = sc.nextInt();
+        sc.nextLine();
+        System.out.println("Enter weight: ");
+        width = sc.nextInt();
+    }
+    @Override
+    public void output(){
+        super.output();
+        System.out.println("Height: " + height);
+        System.out.println("Width: " + width);
+        System.out.println("Watercolour: " + isWaterColour);
+        System.out.println("Framed: " + isFramed);
+    }
+}
